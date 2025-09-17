@@ -9,7 +9,7 @@ const generateToken = (id) => {
         console.error('JWT-SECRET is not defined in the environment.');
         return null; // Or throw an error, depending on your error handling strategy
     }
-    return jwt.sign({ id }, process.env['JWT-SECRET'], { expiresIn: '1d' });
+    return jwt.sign({ id }, process.env['JWT-SECRET'], { expiresIn: '15d' });
 };
 // "message": "secretOrPrivateKey must have a value"
 // This message appear in postman after i fix the error below
