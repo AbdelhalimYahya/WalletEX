@@ -35,7 +35,7 @@ export const getDashboardData = async (req, res) => {
         // Fetch last 5 transactoins ( income + expense )
         const lastTransactions = [
             ...(await Income.find({ userId }).sort({ date: -1 }).limit(5)).map((txn) => ({...txn.toObject() , type: "income"})),
-            ...(await Expense.find({ userId }).sort({ date: -1 }).limit(5)).map((txn) => ({...txn.toObject() , type: "income"})),
+            ...(await Expense.find({ userId }).sort({ date: -1 }).limit(5)).map((txn) => ({...txn.toObject() , type: "expense"})), // فكرة فيديو
         ].sort((a , b) => b.date - a.date); // Sort latest first
 
         // Final response

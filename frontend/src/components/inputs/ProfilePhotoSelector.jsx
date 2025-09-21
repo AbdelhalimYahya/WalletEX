@@ -7,7 +7,7 @@ const ProfilePhotoSelector = ({image , setImage}) => {
   const [previewUrl , setPreviewUrl] = useState(null);
 
   const handleImageChange = (event) => {
-    const file = event.target.file[0];
+    const file = event.target.files[0];
     
     if (file) {
       // Update the image state
@@ -47,4 +47,4 @@ const ProfilePhotoSelector = ({image , setImage}) => {
   )
 }
 
-export default ProfilePhotoSelector
+export default ProfilePhotoSelector;
